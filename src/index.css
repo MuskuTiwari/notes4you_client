@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: sans-serif;
+    overflow-y: scroll;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; /* Allow scrolling if content exceeds viewport height */
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("../src/public/img/noting_bg.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: .6; 
+    z-index: -1; 
+    pointer-events: none;
+  }
+
+  body {
+    background: linear-gradient(
+      145deg,
+      rgba(5, 5, 5, 0.6),
+      rgba(13, 12, 12, 0.8),
+      rgba(0, 0, 0, 0.9)
+    );
+    background-attachment: fixed; /* Makes gradient stay in place while scrolling */
+  }
+}
+
+@layer components {
+  .input-box {
+    @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none;
+  }
+
+  .btn-primary {
+    @apply w-full text-sm bg-[#101010];
+  }
+
+  .icon-btn {
+    @apply text-xl text-slate-300 cursor-pointer hover:text-[#2B85FF];
+  }
+  .input-label {
+    @apply text-xs text-slate-400;
+  }
+}
