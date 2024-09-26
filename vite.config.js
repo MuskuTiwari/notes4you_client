@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "https://notes4you-server.onrender.com",
+        target: "http://notes4you-server.onrender.com",
         changeOrigin: true,
       },
     },
